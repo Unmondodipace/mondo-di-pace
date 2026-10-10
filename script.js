@@ -106,15 +106,15 @@ clearMessagesBtn.addEventListener('click', () => {
 });
 
 renderMessages();
-
 const navLinks = document.querySelectorAll('.nav-links a');
+
 navLinks.forEach((link) => {
-  link.addEventListener('click', (event) => {
-    event.preventDefault();
+  link.addEventListener('click', () => {
     navLinks.forEach((item) => item.classList.remove('active'));
     link.classList.add('active');
   });
 });
+
 
 const softButton = document.querySelector('.soft-button');
 softButton?.addEventListener('click', () => {
