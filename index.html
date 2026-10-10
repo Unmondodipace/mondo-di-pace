@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="it">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Un mondo di pace</title>
+    <meta
+      name="description"
+      content="Landing page interattiva per condividere pensieri di pace, azioni buone e momenti di speranza."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Patrick+Hand&family=Quicksand:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="topbar">
+        <nav class="nav" aria-label="Menu principale">
+          <div class="nav-brand">
+            <span class="brand-icon">🏠</span>
+            <span>Home</span>
+          </div>
+
+          <div class="nav-links">
+            <a href="#" class="active">Home</a>
+            <a href="#progetto">Il Progetto</a>
+            <a href="#pensieri">I Pensieri</a>
+            <a href="#azioni">Le Azioni Buone</a>
+            <a href="#esperienze">Le Esperienze</a>
+            <a href="#contatti">Contatti</a>
+          </div>
+        </nav>
+
+        <div class="lang-switcher" aria-label="Lingue disponibili">
+          <span class="lang it">IT</span>
+          <span class="lang en">EN</span>
+          <span class="lang fr">FR</span>
+          <span class="lang de">DE</span>
+          <span class="lang es">ES</span>
+        </div>
+      </header>
+
+      <main>
+        <section class="hero" aria-labelledby="hero-title">
+          <div class="hero-visual" aria-hidden="true">
+            <div class="globe-wrap">
+              <div class="planet">
+                <div class="heart"></div>
+              </div>
+              <div class="hand left-hand"></div>
+              <div class="hand right-hand"></div>
+              <span class="flower flower-1"></span>
+              <span class="flower flower-2"></span>
+              <span class="flower flower-3"></span>
+              <span class="flower flower-4"></span>
+              <span class="flower flower-5"></span>
+              <span class="flower flower-6"></span>
+              <div class="grass-strip"></div>
+            </div>
+          </div>
+
+          <div class="hero-copy">
+            <h1 id="hero-title" class="hero-title">
+              <span>Un mondo di pace</span>
+            </h1>
+
+            <p class="hero-subtitle">
+              Ogni pensiero di pace merita tre azioni buone.
+            </p>
+
+            <p class="hero-text">
+              Non limitarti a chiedere la pace.<br />
+              Comincia a costruirla.
+            </p>
+
+            <div class="bubble-note">
+              Insieme,<br />
+              possiamo rendere<br />
+              il mondo un posto<br />
+              più gentile,<br />
+              più giusto,<br />
+              più umano.
+              <span class="bubble-heart"></span>
+            </div>
+          </div>
+        </section>
+
+        <section class="info-grid" id="progetto">
+          <article class="card pink-card">
+            <h2>
+              <span class="headline-mark">♥</span>
+              Il Patto delle Tre Azioni Buone
+            </h2>
+            <p>
+              Per poter lasciare il tuo pensiero di pace, ti invitiamo a
+              impegnarti a compiere tre azioni buone a favore degli altri, nei
+              prossimi 7 giorni, secondo le tue possibilità.
+            </p>
+            <p>
+              Non importa quanto puoi fare, ma che tu scelga con il cuore e
+              gesti che fanno la differenza.
+            </p>
+            <button class="soft-button" type="button">Scopri come funziona</button>
+          </article>
+
+          <article class="card green-card" id="pensieri">
+            <h2>
+              <span class="headline-mark">🌍</span>
+              Un progetto per tutti
+            </h2>
+            <p>
+              Questo spazio nasce dal desiderio di un mondo senza guerre, senza
+              odio e senza violenza. Qui ogni persona può lasciare un messaggio
+              di speranza.
+            </p>
+
+            <ul class="benefits-list">
+              <li><span class="list-icon">💬</span> Essere gentile con qualcuno che ha bisogno di un sorriso.</li>
+              <li><span class="list-icon">🤝</span> Aiutare una persona in difficoltà o un anziano del tuo quartiere.</li>
+              <li><span class="list-icon">🌿</span> Ascoltare con pazienza e dialogare anche quando è difficile.</li>
+              <li><span class="list-icon">☀️</span> Fare un gesto di solidarietà o partecipare a un'iniziativa locale.</li>
+              <li><span class="list-icon">🕊️</span> Preparare la tua idea! Ogni gesto conta.</li>
+            </ul>
+
+            <div class="signature">Tutti insieme per la pace!</div>
+          </article>
+
+          <aside class="card form-card" id="contatti">
+            <h2>
+              <span class="headline-mark">✍️</span>
+              Lascia il tuo pensiero di pace
+            </h2>
+
+            <p class="form-intro">
+              Scrivi qui la tua frase, la tua riflessione, un desiderio o una
+              poesia. Sarà pubblicata dopo un breve controllo.
+            </p>
+
+            <form id="peace-form" novalidate>
+              <input
+                id="thought"
+                name="thought"
+                class="field"
+                type="text"
+                maxlength="160"
+                placeholder="Il tuo pensiero..."
+                aria-label="Il tuo pensiero"
+              />
+
+              <input
+                id="name"
+                name="name"
+                class="field"
+                type="text"
+                maxlength="60"
+                placeholder="Il tuo nome (facoltativo)"
+                aria-label="Il tuo nome"
+              />
+
+              <select id="country" name="country" class="field" aria-label="Seleziona il Paese">
+                <option value="">Seleziona il Paese</option>
+                <option value="Italia">Italia</option>
+                <option value="Francia">Francia</option>
+                <option value="Spagna">Spagna</option>
+                <option value="Germania">Germania</option>
+                <option value="Regno Unito">Regno Unito</option>
+                <option value="Stati Uniti">Stati Uniti</option>
+              </select>
+
+              <label class="checkbox-row" for="accept">
+                <input id="accept" name="accept" type="checkbox" />
+                <span>
+                  Accetto il Patto delle Tre Azioni Buone e mi impegno a
+                  compierle tre azioni entro 7 giorni.
+                </span>
+              </label>
+
+              <div id="form-message" class="form-message" aria-live="polite"></div>
+
+              <button class="submit-btn" type="submit">Invia il tuo pensiero</button>
+            </form>
+          </aside>
+        </section>
+
+        <section class="wall-section" id="azioni" aria-labelledby="wall-title">
+          <div class="wall-header">
+            <p class="wall-tagline">La pace non è solo la fine della guerra, ma l’inizio di un mondo più giusto e più umano.</p>
+          </div>
+
+          <div class="steps-row" aria-label="Passi verso la pace">
+            <button class="step-chip" type="button">Pensa</button>
+            <span class="step-arrow">→</span>
+            <button class="step-chip" type="button">Scegli</button>
+            <span class="step-arrow">→</span>
+            <button class="step-chip" type="button">Agisci</button>
+            <span class="step-arrow">→</span>
+            <button class="step-chip" type="button">Condividi</button>
+          </div>
+
+          <div class="wall-footer">
+            <p>La pace<br />inizia da te.</p>
+          </div>
+        </section>
+
+        <section class="messages-panel" aria-labelledby="messages-title">
+          <div class="messages-header">
+            <h3 id="messages-title">Pensieri condivisi</h3>
+            <button class="clear-btn" type="button" id="clear-messages">Cancella</button>
+          </div>
+          <div id="messages-list" class="messages-list" aria-live="polite"></div>
+        </section>
+      </main>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
