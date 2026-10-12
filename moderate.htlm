@@ -78,7 +78,7 @@
   }
 
   // Elimina il messaggio inopportuno
-  async function物理 elimina(id) {
+  async function elimina(id) {
     if(confirm("Vuoi davvero rimuovere questo messaggio per sempre? Non apparirà sul sito.")) {
         const { error } = await supabase
           .from('messaggi')
