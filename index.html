@@ -7,19 +7,20 @@ html
     <title>Un mondo di pace</title>
     <meta
       name="description"
-      content="Landing page interattiva per condividere pensieri di pace, azioni buone e moments di speranza."
+      content="Landing page interattiva per condividere pensieri di pace, azioni buone e momenti di speranza."
     />
-    <link rel="preconnect" href="https://googleapis.com" />
-    <link rel="preconnect" href="https://gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://googleapis.com/css2?family=Patrick+Hand&family=Quicksand:wght@400;500;600;700;800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Patrick+Hand&family=Quicksand:wght@400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles.css" />
     
-    <!-- LIBRERIA SUPABASE CONFIGURATA CORRETTAMENTE -->
+    <!-- 1. INCLUSIONE LIBRERIA SUPABASE -->
     <script src="https://jsdelivr.net"></script>
     <script>
+      // Configurazione con le tue credenziali ufficiali
       const SUPABASE_URL = "https://supabase.co";
       const SUPABASE_ANON_KEY = "sb_publishable_xJbWH3ACgE644IkYjY9KvA_PEVdtPL2";
       const supabase = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
@@ -43,6 +44,7 @@ html
           </div>
         </nav>
 
+        <!-- Selettore lingue funzionante -->
         <div class="lang-switcher" aria-label="Lingue disponibili">
           <span class="lang it active" onclick="changeLanguage('it')">IT</span>
           <span class="lang en" onclick="changeLanguage('en')">EN</span>
@@ -75,10 +77,18 @@ html
             <h1 id="hero-title" class="hero-title">
               <span data-i18n="hero-title">Un mondo di pace</span>
             </h1>
-            <p class="hero-subtitle" data-i18n="hero-subtitle">Ogni pensiero di pace merita tre azioni buone.</p>
-            <p class="hero-text" data-i18n="hero-text">Non limitarti a chiedere la pace.<br>Comincia a costruirla.</p>
+
+            <p class="hero-subtitle" data-i18n="hero-subtitle">
+              Ogni pensiero di pace merita tre azioni buone.
+            </p>
+
+            <p class="hero-text" data-i18n="hero-text">
+              Non limitarti a chiedere la pace.<br />
+              Comincia a costruirla.
+            </p>
+
             <div class="bubble-note">
-              <span data-i18n="bubble-text">Insieme,<br>possiamo rendere<br>il mondo un posto<br>più gentile,<br>più giusto,<br>più umano.</span>
+              <span data-i18n="bubble-text">Insieme,<br />possiamo rendere<br />il mondo un posto<br />più gentile,<br />più giusto,<br />più umano.</span>
               <span class="bubble-heart"></span>
             </div>
           </div>
@@ -86,15 +96,33 @@ html
 
         <section class="info-grid" id="progetto">
           <article class="card pink-card">
-            <h2><span class="headline-mark">♥</span> <span data-i18n="card1-title">Il Patto delle Tre Azioni Buone</span></h2>
-            <p data-i18n="card1-p1">Per poter lasciare il tuo pensiero di pace, ti invitiamo a impegnarti a compiere tre azioni buone a favore degli altri, nei prossimi 7 giorni, secondo le tue possibilità.</p>
-            <p data-i18n="card1-p2">Non importa quanto puoi fare, ma che tu scelga con il cuore e gesti che fanno la differenza.</p>
+            <h2>
+              <span class="headline-mark">♥</span>
+              <span data-i18n="card1-title">Il Patto delle Tre Azioni Buone</span>
+            </h2>
+            <p data-i18n="card1-p1">
+              Per poter lasciare il tuo pensiero di pace, ti invitiamo a
+              impegnarti a compiere tre azioni buone a favore degli altri, nei
+              prossimi 7 giorni, secondo le tue possibilità.
+            </p>
+            <p data-i18n="card1-p2">
+              Non importa quanto puoi fare, ma che tu scelga con il cuore e
+              gesti che fanno la differenza.
+            </p>
             <button class="soft-button" type="button" data-i18n="card1-btn">Scopri come funziona</button>
           </article>
 
           <article class="card green-card" id="pensieri">
-            <h2><span class="headline-mark">🌍</span> <span data-i18n="card2-title">Un progetto per tutti</span></h2>
-            <p data-i18n="card2-p1">Questo spazio nasce dal desiderio di un mondo senza guerre, senza odio e senza violenza. Qui ogni persona può lasciare un messaggio di speranza.</p>
+            <h2>
+              <span class="headline-mark">🌍</span>
+              <span data-i18n="card2-title">Un progetto per tutti</span>
+            </h2>
+            <p data-i18n="card2-p1">
+              Questo spazio nasce dal desiderio di un mondo senza guerre, senza
+              odio e senza violenza. Qui ogni persona può lasciare un messaggio
+              di speranza.
+                 </p>
+
             <ul class="benefits-list">
               <li><span class="list-icon">💬</span> <span data-i18n="list-1">Essere gentile con qualcuno che ha bisogno di un sorriso.</span></li>
               <li><span class="list-icon">🤝</span> <span data-i18n="list-2">Aiutare una persona in difficoltà o un anziano del tuo quartiere.</span></li>
@@ -102,17 +130,44 @@ html
               <li><span class="list-icon">☀️</span> <span data-i18n="list-4">Fare un gesto di solidarietà o partecipare a un'iniziativa locale.</span></li>
               <li><span class="list-icon">🕊️</span> <span data-i18n="list-5">Preparare la tua idea! Ogni gesto conta.</span></li>
             </ul>
+
             <div class="signature" data-i18n="signature">Tutti insieme per la pace!</div>
           </article>
 
           <aside class="card form-card" id="contatti">
-            <h2><span class="headline-mark">✍️</span> <span data-i18n="form-title">Lascia il tuo pensiero di pace</span></h2>
-            <p class="form-intro" data-i18n="form-intro">Scrivi qui la tua frase, la tua riflessione, un desiderio o una poesia. Sarà pubblicata dopo un breve controllo.</p>
-            
+            <h2>
+              <span class="headline-mark">✍️</span>
+              <span data-i18n="form-title">Lascia il tuo pensiero di pace</span>
+            </h2>
+
+            <p class="form-intro" data-i18n="form-intro">
+              Scrivi qui la tua frase, la tua riflessione, un desiderio o una
+              poesia. Sarà pubblicata dopo un breve controllo.
+            </p>
+
             <form id="peace-form" novalidate>
-              <input id="thought" name="thought" class="field" type="text" maxlength="160" placeholder="Il tuo pensiero..." required />
-              <input id="name" name="name" class="field" type="text" maxlength="60" placeholder="Il tuo nome (facoltativo)" />
-              <select id="country" name="country" class="field" required>
+              <input
+                id="thought"
+                name="thought"
+                class="field"
+                type="text"
+                maxlength="160"
+                placeholder="Il tuo pensiero..."
+                aria-label="Il tuo pensiero"
+                required
+              />
+
+              <input
+                id="name"
+                name="name"
+                class="field"
+                type="text"
+                maxlength="60"
+                placeholder="Il tuo nome (facoltativo)"
+                aria-label="Il tuo nome"
+              />
+
+              <select id="country" name="country" class="field" aria-label="Seleziona il Paese" required>
                 <option value="" data-i18n="select-country">Seleziona il Paese</option>
                 <option value="Italia">Italia</option>
                 <option value="Francia">Francia</option>
@@ -121,21 +176,28 @@ html
                 <option value="Regno Unito">Regno Unito</option>
                 <option value="Stati Uniti">Stati Uniti</option>
               </select>
+
               <label class="checkbox-row" for="accept">
                 <input id="accept" name="accept" type="checkbox" required />
-                <span data-i18n="checkbox-text">Accetto il Patto delle Tre Azioni Buone e mi impegno a compierle tre azioni entro 7 giorni.</span>
+                <span data-i18n="checkbox-text">
+                  Accetto il Patto delle Tre Azioni Buone e mi impegno a
+                  compierle tre azioni entro 7 giorni.
+                </span>
               </label>
-              <div id="form-message" class="form-message" style="margin: 10px 0; font-weight: bold;"></div>
+
+              <div id="form-message" class="form-message" aria-live="polite" style="margin: 10px 0; font-weight: bold;"></div>
+
               <button class="submit-btn" type="submit" data-i18n="submit-btn">Invia il tuo pensiero</button>
             </form>
           </aside>
         </section>
 
-        <section class="wall-section" id="azioni">
+        <section class="wall-section" id="azioni" aria-labelledby="wall-title">
           <div class="wall-header">
             <p class="wall-tagline" data-i18n="wall-tagline">La pace non è solo la fine della guerra, ma l’inizio di un mondo più giusto e più umano.</p>
           </div>
-          <div class="steps-row">
+
+          <div class="steps-row" aria-label="Passi verso la pace">
             <button class="step-chip" type="button" data-i18n="step-1">Pensa</button>
             <span class="step-arrow">→</span>
             <button class="step-chip" type="button" data-i18n="step-2">Scegli</button>
@@ -144,35 +206,33 @@ html
             <span class="step-arrow">→</span>
             <button class="step-chip" type="button" data-i18n="step-4">Condividi</button>
           </div>
+
           <div class="wall-footer">
-            <p data-i18n="wall-footer">La pace<br>inizia da te.</p>
+            <p data-i18n="wall-footer">La pace<br />inizia da te.</p>
           </div>
         </section>
 
-        <section class="messages-panel" style="padding: 40px 20px; background: #fff; border-radius: 12px; margin: 20px 0;">
-          <div style="text-align: center; margin-bottom: 20px;">
+        <!-- SEZIONE MESSAGGI PUBBLICATI DAL DATABASE -->
+        <section class="messages-panel" aria-labelledby="messages-title" style="padding: 40px 20px; background: #fff; border-radius: 12px; margin: 20px 0;">
+          <div class="messages-header" style="text-align: center; margin-bottom: 20px;">
             <h3 id="messages-title" style="font-size: 2rem; color: #333;" data-i18n="shared-thoughts">Pensieri condivisi</h3>
           </div>
-          <div id="lista-messaggi" style="max-width: 600px; margin: 0 auto; text-align: center;">Caricamento pensieri di pace...</div>
+          <div id="lista-messaggi" style="max-width: 600px; margin: 0 auto;">Caricamento pensieri di pace...</div>
         </section>
-      </main>
-    </div>
-
-    <script>
-      const translations = {
-        it: {
-          "nav-home": "Home", "nav-project": "Il Progetto", "nav-thoughts": "I Pensieri", "nav-actions": "Le Azioni Buone", "nav-contacts": "Contatti",
-          "hero-title": "Un mondo di pace", "hero-subtitle": "Ogni pensiero di pace merita tre azioni buone.", "hero-text": "Non limitarti a chiedere la pace. Comincia a costruirla.",
-          "bubble-text": "Insieme, possiamo rendere il mondo un posto più gentile, più giusto, più umano.",
-          "card1-title": "Il Patto delle Tre Azioni Buone", "card1-p1": "Per poter lasciare il tuo pensiero di pace, ti invitiamo a impegnarti a compiere tre azioni buone a favore degli altri, nei prossimi 7 giorni, secondo le tue possibilità.", "card1-p2": "Non importa quanto puoi fare, ma che tu scelga con il cuore e gesti che fanno la differenza.", "card1-btn": "Scopri come funziona",
-Usa il codice con cautela.
+        // --- SEZIONE MULTILINGUA ---
+const translations = {
+it: {
+"nav-home": "Home", "nav-project": "Il Progetto", "nav-thoughts": "I Pensieri", "nav-actions": "Le Azioni Buone", "nav-contacts": "Contatti",
+"hero-title": "Un mondo di pace", "hero-subtitle": "Ogni pensiero di pace merita tre azioni buone.", "hero-text": "Non limitarti a chiedere la pace. Comincia a costruirla.",
+"bubble-text": "Insieme, possiamo rendere il mondo un posto più gentile, più giusto, più umano.",
+"card1-title": "Il Patto delle Tre Azioni Buone", "card1-p1": "Per poter lasciare il tuo pensiero di pace, ti invitiamo a impegnarti a compiere tre azioni buone a favore degli altri, nei prossimi 7 giorni, secondo le tue possibilità.", "card1-p2": "Non importa quanto puoi fare, ma che tu scelga con il cuore e gesti che fanno la differenza.", "card1-btn": "Scopri come funziona",
 "card2-title": "Un progetto per tutti", "card2-p1": "Questo spazio nasce dal desiderio di un mondo senza guerre, senza odio e senza violenza. Qui ogni persona può lasciare un messaggio di speranza.",
 "list-1": "Essere gentile con qualcuno che ha bisogno di un sorriso.", "list-2": "Aiutare una persona in difficoltà o un anziano del tuo quartiere.", "list-3": "Ascoltare con pazienza e dialogare anche quando è difficile.", "list-4": "Fare un gesto di solidarietà o partecipare a un'iniziativa locale.", "list-5": "Preparare la tua idea! Ogni gesto conta.",
 "signature": "Tutti insieme per la pace!", "form-title": "Lascia il tuo pensiero di pace", "form-intro": "Scrivi qui la tua frase, la tua riflessione, un desiderio o una poesia. Sarà pubblicata dopo un breve controllo.",
 "select-country": "Seleziona il Paese", "checkbox-text": "Accetto il Patto delle Tre Azioni Buone e mi impegno a compierle tre azioni entro 7 giorni.", "submit-btn": "Invia il tuo pensiero",
 "wall-tagline": "La pace non è solo la fine della guerra, ma l’inizio di un mondo più giusto e più umano.",
 "step-1": "Pensa", "step-2": "Scegli", "step-3": "Agisci", "step-4": "Condividi", "wall-footer": "La pace inizia da te.",
-"shared-thoughts": "Pensieri condivisi", "no-msg": "Nessun pensiero presente. Sii il primo!",
+"shared-thoughts": "Pensieri condivisi", "loading": "Caricamento pensieri di pace...", "no-msg": "Nessun pensiero presente. Sii il primo!",
 "alert-success": "Grazie! Il tuo pensiero è in attesa di moderazione.", "alert-error": "Errore durante l'invio. Riprova.", "alert-accept": "Devi accettare il Patto per inviare il pensiero."
 },
 en: {
@@ -186,22 +246,22 @@ en: {
 "select-country": "Select Country", "checkbox-text": "I accept the Three Good Deeds Pact and commit to doing three actions within 7 days.", "submit-btn": "Send your thought",
 "wall-tagline": "Peace is not just the end of war, but the beginning of a fairer and more human world.",
 "step-1": "Think", "step-2": "Choose", "step-3": "Act", "step-4": "Share", "wall-footer": "Peace starts with you.",
-"shared-thoughts": "Shared Thoughts", "no-msg": "No thoughts yet. Be the first!",
+"shared-thoughts": "Shared Thoughts", "loading": "Loading thoughts of peace...", "no-msg": "No thoughts yet. Be the first!",
 "alert-success": "Thank you! Your thought is awaiting moderation.", "alert-error": "Error sending. Please try again.", "alert-accept": "You must accept the Pact to send your thought."
 },
 fr: {
 "nav-home": "Accueil", "nav-project": "Le Projet", "nav-thoughts": "Pensées", "nav-actions": "Bonnes Actions", "nav-contacts": "Contacts",
-"hero-title": "Un monde de paix", "hero-subtitle": "Chaque pensée de paix mérite trois bonnes actions.", "hero-text": "Ne vous limitez pas à demander la paix. Commencez à la construire.",
+"hero-title": "Un monde de paix", "hero-subtitle": "Chaque pensée de paix mérite trois bonnes actions.", "hero-text": "Ne viendrez pas seulement demander la paix. Commencez à la construire.",
 "bubble-text": "Ensemble, nous pouvons faire du monde un endroit plus bienveillant, plus juste, plus humain.",
 "card1-title": "Le Pacte des Trois Bonnes Actions", "card1-p1": "Pour laisser votre pensée de paix, nous vous invitons à vous engager à accomplir trois bonnes actions pour les autres au cours des 7 prochains jours, selon vos possibilités.", "card1-p2": "Peu importe ce que vous pouvez faire, l'important est de choisir avec votre cœur et des gestes qui font la différence.", "card1-btn": "Découvrir comment ça marche",
 "card2-title": "Un projet pour tous", "card2-p1": "Cet espace est né du désir d'un monde sans guerres, sans haine et sans violence. Ici, chacun peut laisser un message d'espoir.",
 "list-1": "Être gentil avec quelqu'un qui a besoin d'un sourire.", "list-2": "Aider une personne en difficulté ou une personne âgée dans votre quartier.", "list-3": "Écouter avec patience et dialoguer même quand c'est difficile.", "list-4": "Faire un geste de solidarité ou participer à une initiative locale.", "list-5": "Préparez votre idée! Chaque geste compte.",
 "signature": "Tous ensemble pour la paix!", "form-title": "Laissez votre pensée de paix", "form-intro": "Écrivez ici votre phrase, votre réflexion, un souhait ou un poème. Elle sera publiée après une courte vérification.",
 "select-country": "Choisissez le pays", "checkbox-text": "J'accepte le Pacte des Trois Bonnes Actions et m'engage à accomplir trois actions sous 7 jours.", "submit-btn": "Envoyez votre pensée",
-"wall-tagline": "La paix n'est pas seulement la fin de la guerre, mais le début d'un monde plus juste et mais humain.",
+"wall-tagline": "La paix n'est pas seulement la fin de la guerre, mais le début d'un monde plus juste et plus humain.",
 "step-1": "Penser", "step-2": "Choisir", "step-3": "Agir", "step-4": "Partager", "wall-footer": "La paix commence par vous.",
-"shared-thoughts": "Pensées partagées", "no-msg": "Aucune pensée pour le moment. Soyez le premier!",
-"alert-success": "Merci! Votre pensée est en attente de modération.", "alert-error": "Erreur d'envoi. Veuillez réessayer.", "alert-accept": "Vous devez accepter le Pacte pour envoyer votre pensée."
+"shared-thoughts": "Pensées partagées", "loading": "Chargement des pensées...", "no-msg": "Aucune pensée pour le moment. Soyez le premier!",
+        "alert-success": "Merci! Votre pensée est en attente de modération.", "alert-error": "Erreur d'envoi. Veuillez réessayer.", "alert-accept": "Vous devez accepter le Pacte pour envoyer votre pensée."
 },
 de: {
 "nav-home": "Startseite", "nav-project": "Das Projekt", "nav-thoughts": "Gedanken", "nav-actions": "Gute Taten", "nav-contacts": "Kontakt",
@@ -214,7 +274,7 @@ de: {
 "select-country": "Land auswählen", "checkbox-text": "Ich akzeptiere den Pakt der drei guten Taten und verpflichte mich, innerhalb von 7 Tagen drei Taten zu vollbringen.", "submit-btn": "Sende deinen Gedanken",
 "wall-tagline": "Frieden ist nicht nur das Ende des Krieges, sondern der Beginn einer gerechteren und menschlicheren Welt.",
 "step-1": "Denken", "step-2": "Wählen", "step-3": "Handeln", "step-4": "Teilen", "wall-footer": "Der Frieden beginnt bei dir.",
-"shared-thoughts": "Geteilte Gedanken", "no-msg": "Noch keine Gedanken vorhanden. Sei der Erste!",
+"shared-thoughts": "Geteilte Gedanken", "loading": "Gedanken werden geladen...", "no-msg": "Noch keine Gedanken vorhanden. Sei der Erste!",
 "alert-success": "Vielen Dank! Dein Gedanke wartet auf Moderation.", "alert-error": "Fehler beim Senden. Bitte versuche es erneut.", "alert-accept": "Sie müssen den Pakt akzeptieren, um den Gedanken zu senden."
 },
 es: {
@@ -228,22 +288,25 @@ es: {
 "select-country": "Selecciona el País", "checkbox-text": "Acepto el Pacto de las Tres Buenas Acciones y mi compromiso de cumplirlas en un plazo de 7 días.", "submit-btn": "Envía tu pensamiento",
 "wall-tagline": "La paz no es sólo el fin de la guerra, sino el comienzo de un mundo más justo y más humano.",
 "step-1": "Piensa", "step-2": "Elige", "step-3": "Actúa", "step-4": "Comparte", "wall-footer": "La paz empieza en ti.",
-"shared-thoughts": "Pensamientos compartidos", "no-msg": "No hay pensamientos todavía. ¡Sé el primero!",
+"shared-thoughts": "Pensamientos compartidos", "loading": "Cargando pensamientos...", "no-msg": "No hay pensamientos todavía. ¡Sé el primero!",
 "alert-success": "¡Gracias! Tu pensamiento está esperando moderación.", "alert-error": "Error al enviar. Inténtalo de nuevo.", "alert-accept": "Debes aceptar el Pacto para enviar el pensamiento."
 }
 };
 let currentLang = 'it';
 function changeLanguage(lang) {
 currentLang = lang;
+// Aggiorna classi attive sul selettore grafico
 document.querySelectorAll('.lang').forEach(el => el.classList.remove('active'));
 const activeLangEl = document.querySelector(.lang.${lang});
 if(activeLangEl) activeLangEl.classList.add('active');
+// Sostituisce i testi con l'attributo data-i18n
 document.querySelectorAll('[data-i18n]').forEach(el => {
 const key = el.getAttribute('data-i18n');
 if (translations[lang][key]) {
 el.innerHTML = translations[lang][key];
 }
 });
+// Aggiorna i placeholder degli input
 if(lang === 'it') {
 document.getElementById('thought').placeholder = "Il tuo pensiero...";
 document.getElementById('name').placeholder = "Il tuo nome (facoltativo)";
@@ -260,8 +323,11 @@ document.getElementById('name').placeholder = "Dein Name (optional)";
 document.getElementById('thought').placeholder = "Tu pensamiento...";
 document.getElementById('name').placeholder = "Tu nombre (opcional)";
 }
+// Ricarica la lista dei messaggi per aggiornare lo stato del caricamento se vuota
 caricaMessaggiApprovati();
 }
+// --- SEZIONE SUPABASE DATABASE ---
+// 1. Invio del modulo a Supabase
 document.getElementById('peace-form').addEventListener('submit', async function(e) {
 e.preventDefault();
 const msgDiv = document.getElementById('form-message');
@@ -280,6 +346,7 @@ msgDiv.style.color = "red";
 msgDiv.innerHTML = currentLang === 'it' ? "Compila i campi obbligatori." : "Please fill required fields.";
 return;
 }
+// Invio su Supabase. Nota: i campi mappano esattamente le colonne del database
 const { data, error } = await supabase
 .from('messaggi')
 .insert([{ nome: name, paese: country, pensiero: thought }]);
@@ -292,6 +359,7 @@ msgDiv.innerHTML = translations[currentLang]["alert-success"];
 document.getElementById('peace-form').reset();
 }
 });
+// 2. Caricamento dei messaggi approvati sul sito
 async function caricaMessaggiApprovati() {
 const listaDiv = document.getElementById('lista-messaggi');
 const { data: messaggi, error } = await supabase
@@ -315,8 +383,12 @@ item.style.borderLeft = "5px solid #ffb6c1";
 item.style.padding = "15px";
 item.style.marginBottom = "15px";
 item.style.borderRadius = "8px";
-item.style.textAlign = "left";
+item.style.boxShadow = "0 2px 4px rgba(0,0,0,0.05)";
 item.innerHTML = <span style="font-size:0.9rem; color:#666; font-weight:bold;">🕊️ ${msg.nome} da ${msg.paese}</span> <p style="margin: 8px 0 0 0; font-style: italic; font-size:1.1rem; color:#333;">"${msg.pensiero}"</p>;
 listaDiv.appendChild(item);
 });
 }
+// Avvia la lettura iniziale dei messaggi approvati
+caricaMessaggiApprovati();
+
+
