@@ -18,11 +18,12 @@ html
     <link rel="stylesheet" href="styles.css" />
     
     <!-- 1. INCLUSIONE LIBRERIA SUPABASE -->
-    <script src="https://jsdelivr.net"></script>
-    <script>
-      // Configurazione con le tue credenziali ufficiali
-      const SUPABASE_URL = "https://supabase.co";
-      const SUPABASE_ANON_KEY = "sb_publishable_xJbWH3ACgE644IkYjY9KvA_PEVdtPL2";
+   <script src="https://jsdelivr.net"></script>
+<script>
+  const SUPABASE_URL = "https://supabase.co";
+  const SUPABASE_ANON_KEY = "sb_publishable_xJbWH3ACgE644IkYjY9KvA_PEVdtPL2";
+  const supabase = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+</script>
       const supabase = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
     </script>
   </head>
