@@ -1,3 +1,4 @@
+html
 <!DOCTYPE html>
 <html lang="it">
   <head>
@@ -6,20 +7,19 @@
     <title>Un mondo di pace</title>
     <meta
       name="description"
-      content="Landing page interattiva per condividere pensieri di pace, azioni buone e momenti di speranza."
+      content="Landing page interattiva per condividere pensieri di pace, azioni buone e moments di speranza."
     />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://googleapis.com" />
+    <link rel="preconnect" href="https://gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Patrick+Hand&family=Quicksand:wght@400;500;600;700;800&display=swap"
+      href="https://googleapis.com/css2?family=Patrick+Hand&family=Quicksand:wght@400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles.css" />
     
-    <!-- 1. INCLUSIONE LIBRERIA SUPABASE -->
+    <!-- LIBRERIA SUPABASE CONFIGURATA CORRETTAMENTE -->
     <script src="https://jsdelivr.net"></script>
     <script>
-      // Configurazione con le tue credenziali ufficiali
       const SUPABASE_URL = "https://supabase.co";
       const SUPABASE_ANON_KEY = "sb_publishable_xJbWH3ACgE644IkYjY9KvA_PEVdtPL2";
       const supabase = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
@@ -43,7 +43,6 @@
           </div>
         </nav>
 
-        <!-- Selettore lingue funzionante -->
         <div class="lang-switcher" aria-label="Lingue disponibili">
           <span class="lang it active" onclick="changeLanguage('it')">IT</span>
           <span class="lang en" onclick="changeLanguage('en')">EN</span>
@@ -76,18 +75,10 @@
             <h1 id="hero-title" class="hero-title">
               <span data-i18n="hero-title">Un mondo di pace</span>
             </h1>
-
-            <p class="hero-subtitle" data-i18n="hero-subtitle">
-              Ogni pensiero di pace merita tre azioni buone.
-            </p>
-
-            <p class="hero-text" data-i18n="hero-text">
-              Non limitarti a chiedere la pace.<br />
-              Comincia a costruirla.
-            </p>
-
+            <p class="hero-subtitle" data-i18n="hero-subtitle">Ogni pensiero di pace merita tre azioni buone.</p>
+            <p class="hero-text" data-i18n="hero-text">Non limitarti a chiedere la pace.<br>Comincia a costruirla.</p>
             <div class="bubble-note">
-              <span data-i18n="bubble-text">Insieme,<br />possiamo rendere<br />il mondo un posto<br />più gentile,<br />più giusto,<br />più umano.</span>
+              <span data-i18n="bubble-text">Insieme,<br>possiamo rendere<br>il mondo un posto<br>più gentile,<br>più giusto,<br>più umano.</span>
               <span class="bubble-heart"></span>
             </div>
           </div>
@@ -95,33 +86,15 @@
 
         <section class="info-grid" id="progetto">
           <article class="card pink-card">
-            <h2>
-              <span class="headline-mark">♥</span>
-              <span data-i18n="card1-title">Il Patto delle Tre Azioni Buone</span>
-            </h2>
-            <p data-i18n="card1-p1">
-              Per poter lasciare il tuo pensiero di pace, ti invitiamo a
-              impegnarti a compiere tre azioni buone a favore degli altri, nei
-              prossimi 7 giorni, secondo le tue possibilità.
-            </p>
-            <p data-i18n="card1-p2">
-              Non importa quanto puoi fare, ma che tu scelga con il cuore e
-              gesti che fanno la differenza.
-            </p>
+            <h2><span class="headline-mark">♥</span> <span data-i18n="card1-title">Il Patto delle Tre Azioni Buone</span></h2>
+            <p data-i18n="card1-p1">Per poter lasciare il tuo pensiero di pace, ti invitiamo a impegnarti a compiere tre azioni buone a favore degli altri, nei prossimi 7 giorni, secondo le tue possibilità.</p>
+            <p data-i18n="card1-p2">Non importa quanto puoi fare, ma che tu scelga con il cuore e gesti che fanno la differenza.</p>
             <button class="soft-button" type="button" data-i18n="card1-btn">Scopri come funziona</button>
           </article>
 
           <article class="card green-card" id="pensieri">
-            <h2>
-              <span class="headline-mark">🌍</span>
-              <span data-i18n="card2-title">Un progetto per tutti</span>
-            </h2>
-            <p data-i18n="card2-p1">
-              Questo spazio nasce dal desiderio di un mondo senza guerre, senza
-              odio e senza violenza. Qui ogni persona può lasciare un messaggio
-              di speranza.
-            </p>
-
+            <h2><span class="headline-mark">🌍</span> <span data-i18n="card2-title">Un progetto per tutti</span></h2>
+            <p data-i18n="card2-p1">Questo spazio nasce dal desiderio di un mondo senza guerre, senza odio e senza violenza. Qui ogni persona può lasciare un messaggio di speranza.</p>
             <ul class="benefits-list">
               <li><span class="list-icon">💬</span> <span data-i18n="list-1">Essere gentile con qualcuno che ha bisogno di un sorriso.</span></li>
               <li><span class="list-icon">🤝</span> <span data-i18n="list-2">Aiutare una persona in difficoltà o un anziano del tuo quartiere.</span></li>
@@ -129,44 +102,17 @@
               <li><span class="list-icon">☀️</span> <span data-i18n="list-4">Fare un gesto di solidarietà o partecipare a un'iniziativa locale.</span></li>
               <li><span class="list-icon">🕊️</span> <span data-i18n="list-5">Preparare la tua idea! Ogni gesto conta.</span></li>
             </ul>
-
             <div class="signature" data-i18n="signature">Tutti insieme per la pace!</div>
           </article>
 
           <aside class="card form-card" id="contatti">
-            <h2>
-              <span class="headline-mark">✍️</span>
-              <span data-i18n="form-title">Lascia il tuo pensiero di pace</span>
-            </h2>
-
-            <p class="form-intro" data-i18n="form-intro">
-              Scrivi qui la tua frase, la tua riflessione, un desiderio o una
-              poesia. Sarà pubblicata dopo un breve controllo.
-            </p>
-
+            <h2><span class="headline-mark">✍️</span> <span data-i18n="form-title">Lascia il tuo pensiero di pace</span></h2>
+            <p class="form-intro" data-i18n="form-intro">Scrivi qui la tua frase, la tua riflessione, un desiderio o una poesia. Sarà pubblicata dopo un breve controllo.</p>
+            
             <form id="peace-form" novalidate>
-              <input
-                id="thought"
-                name="thought"
-                class="field"
-                type="text"
-                maxlength="160"
-                placeholder="Il tuo pensiero..."
-                aria-label="Il tuo pensiero"
-                required
-              />
-
-              <input
-                id="name"
-                name="name"
-                class="field"
-                type="text"
-                maxlength="60"
-                placeholder="Il tuo nome (facoltativo)"
-                aria-label="Il tuo nome"
-              />
-
-              <select id="country" name="country" class="field" aria-label="Seleziona il Paese" required>
+              <input id="thought" name="thought" class="field" type="text" maxlength="160" placeholder="Il tuo pensiero..." required />
+              <input id="name" name="name" class="field" type="text" maxlength="60" placeholder="Il tuo nome (facoltativo)" />
+              <select id="country" name="country" class="field" required>
                 <option value="" data-i18n="select-country">Seleziona il Paese</option>
                 <option value="Italia">Italia</option>
                 <option value="Francia">Francia</option>
@@ -175,28 +121,21 @@
                 <option value="Regno Unito">Regno Unito</option>
                 <option value="Stati Uniti">Stati Uniti</option>
               </select>
-
               <label class="checkbox-row" for="accept">
                 <input id="accept" name="accept" type="checkbox" required />
-                <span data-i18n="checkbox-text">
-                  Accetto il Patto delle Tre Azioni Buone e mi impegno a
-                  compierle tre azioni entro 7 giorni.
-                </span>
+                <span data-i18n="checkbox-text">Accetto il Patto delle Tre Azioni Buone e mi impegno a compierle tre azioni entro 7 giorni.</span>
               </label>
-
-              <div id="form-message" class="form-message" aria-live="polite" style="margin: 10px 0; font-weight: bold;"></div>
-
+              <div id="form-message" class="form-message" style="margin: 10px 0; font-weight: bold;"></div>
               <button class="submit-btn" type="submit" data-i18n="submit-btn">Invia il tuo pensiero</button>
             </form>
           </aside>
         </section>
 
-        <section class="wall-section" id="azioni" aria-labelledby="wall-title">
+        <section class="wall-section" id="azioni">
           <div class="wall-header">
             <p class="wall-tagline" data-i18n="wall-tagline">La pace non è solo la fine della guerra, ma l’inizio di un mondo più giusto e più umano.</p>
           </div>
-
-          <div class="steps-row" aria-label="Passi verso la pace">
+          <div class="steps-row">
             <button class="step-chip" type="button" data-i18n="step-1">Pensa</button>
             <span class="step-arrow">→</span>
             <button class="step-chip" type="button" data-i18n="step-2">Scegli</button>
@@ -205,17 +144,24 @@
             <span class="step-arrow">→</span>
             <button class="step-chip" type="button" data-i18n="step-4">Condividi</button>
           </div>
-
           <div class="wall-footer">
-            <p data-i18n="wall-footer">La pace<br />inizia da te.</p>
+            <p data-i18n="wall-footer">La pace<br>inizia da te.</p>
           </div>
         </section>
 
-        <!-- SEZIONE MESSAGGI PUBBLICATI DAL DATABASE -->
-        <section class="messages-panel" aria-labelledby="messages-title" style="padding: 40px 20px; background: #fff; border-radius: 12px; margin: 20px 0;">
-          <div class="messages-header" style="text-align: center; margin-bottom: 20px;">
+        <section class="messages-panel" style="padding: 40px 20px; background: #fff; border-radius: 12px; margin: 20px 0;">
+          <div style="text-align: center; margin-bottom: 20px;">
             <h3 id="messages-title" style="font-size: 2rem; color: #333;" data-i18n="shared-thoughts">Pensieri condivisi</h3>
           </div>
-          <div id="lista-messaggi" style="max-width: 600px; margin: 0 auto;">Caricamento pensieri di pace...</div>
+          <div id="lista-messaggi" style="max-width: 600px; margin: 0 auto; text-align: center;">Caricamento pensieri di pace...</div>
         </section>
- 
+      </main>
+    </div>
+
+    <script>
+      const translations = {
+        it: {
+          "nav-home": "Home", "nav-project": "Il Progetto", "nav-thoughts": "I Pensieri", "nav-actions": "Le Azioni Buone", "nav-contacts": "Contatti",
+          "hero-title": "Un mondo di pace", "hero-subtitle": "Ogni pensiero di pace merita tre azioni buone.", "hero-text": "Non limitarti a chiedere la pace. Comincia a costruirla.",
+          "bubble-text": "Insieme, possiamo rendere il mondo un posto più gentile, più giusto, più umano.",
+          "card1-title": "Il Patto delle Tre Azioni Buone", "card1-p1": "Per poter lasciare 
