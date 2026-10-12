@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pannello Moderazione - Un Mondo di Pace</title>
+    <!-- Carica la libreria di Supabase -->
+    <script src="https://jsdelivr.net"></script>
+    <style>
+        body { font-family: 'Quicksand', sans-serif; max-width: 800px; margin: 40px auto; padding: 0 20px; background: #f7f9fc; color: #333; }
+        .box { border: 1px solid #e2e8f0; padding: 20px; margin-bottom: 20px; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.02); }
+        .approvato { background-color: #e2f0d9; border-left: 6px solid #4caf50; }
+        .attesa { background-color: #fff2cc; border-left: 6px solid #ffc107; }
+        button { margin-top: 10px; margin-right: 10px; padding: 8px 16px; cursor: pointer; font-weight: bold; border-radius: 6px; border: none; }
+        .btn-appr { background-color: #4caf50; color: white; }
+        .btn-canc { background-color: #f44336; color: white; }
+        h2 { color: #2c3e50; text-align: center; }
+    </style>
+</head>
+<body>
+
+    <h2>Pannello di Moderazione - Un Mondo di Pace</h2>
+    <p style="text-align:center; color:#666;">I messaggi in giallo sono nuovi. Clicca su "Applica e Pubblica" per mostrarli sul sito, o su "Elimina" per rimuovere quelli cattivi.</p>
+    <hr style="border: 0; height: 1px; background: #e2e8f0; margin: 20px 0;">
+    
+    <div id="pannello-messaggi">Caricamento in corso...</div>
+
+<script>
+  // Configurazione con le tue credenziali ufficiali
+  const SUPABASE_URL = "https://supabase.co";
+  const SUPABASE_ANON_KEY = "sb_publishable_xJbWH3ACgE644IkYjY9KvA_PEVdtPL2";
+  const supabase = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+
+  // Carica tutti i messaggi salvati nel database
+  async function caricaTuttiIMessaggi() {
+    const container = document.getElementById('pannello-messaggi');
+    
+    const { data: messaggi, error } = await supabase
+      .from('messaggi')
+      .select('*')
+      .order('created_at', { ascending: false });
+
+    if (error) {
+      container.innerHTML = '<p style="color:red; font-weight:bold;">Errore: ' + error.message + '</p>';
+      return;
+    }
+
+    container.innerHTML = '';
+    if (!messaggi || messaggi.length === 0) {
+        container.innerHTML = '<p style="text-align:center; color:#777;">Non ci sono ancora messaggi nel database.</p>';
+        return;
+    }
+
+    messaggi.forEach(function(msg) {
+      const div = document.createElement('div');
+      div.className = `box ${msg.approvato ? 'approvato' : 'attesa'}`;
+      
+      div.innerHTML = `
+        <p><strong>Stato:</strong> ${msg.approvato ? '🟢 ONLINE SUL SITO' : '🟡 IN ATTESA DI APPROVAZIONE'}</p>
+        <p><strong>Autore:</strong> ${msg.nome} da ${msg.paese}</p>
+        <p><strong>Messaggio:</strong> "${msg.pensiero}"</p>
+        ${!msg.approvato ? `<button class="btn-appr" onclick="approva(\${msg.id})">Applica e Pubblica</button>` : ''}
+        <button class="btn-canc" onclick="elimina(${msg.id})">Elimina definitivamente</button>
+      `;
+      container.appendChild(div);
+    });
+  }
+
+  // Approva il messaggio (imposta approvato = true)
+  async function approva(id) {
+    const { error } = await supabase
+      .from('messaggi')
+      .update({ approvato: true })
+      .eq('id', id);
+      
+    if (error) alert("Errore durante l'approvazione: " + error.message);
+    else caricaTuttiIMessaggi();
+  }
+
+  // Elimina il messaggio inopportuno
+  async function物理 elimina(id) {
+    if(confirm("Vuoi davvero rimuovere questo messaggio per sempre? Non apparirà sul sito.")) {
+        const { error } = await supabase
+          .from('messaggi')
+          .delete()
+          .eq('id', id);
+          
+        if (error) alert("Errore durante l'eliminazione: " + error.message);
+        else caricaTuttiIMessaggi();
+    }
+  }
+
+  // Caricamento iniziale delle righe
+  caricaTuttiIMessaggi();
+</script>
+</body>
+</html>
