@@ -147,4 +147,11 @@ navBrand?.addEventListener('click', () => {
   window.scrollTo({ top: 0, behavior: 'smooth' });
 });
 
-loadMessages();
+loadMessages();const clearButton = document.getElementById('clear-messages');
+
+clearButton?.addEventListener('click', () => {
+  if (messagesList) {
+    messagesList.innerHTML =
+      '<div class="empty-state">Nessun pensiero ancora condiviso. Sii il primo a lasciare un messaggio di pace.</div>';
+  }
+});
