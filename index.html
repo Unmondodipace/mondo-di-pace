@@ -17,16 +17,17 @@ html
     />
     <link rel="stylesheet" href="styles.css" />
     
-    <!-- 1. INCLUSIONE LIBRERIA SUPABASE -->
-   <script src="https://jsdelivr.net"></script>
+   
+      const supabase = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+    </script>
+  </head><!-- 1. INCLUSIONE LIBRERIA SUPABASE CORRETTA -->
+<script src="https://jsdelivr.net"></script>
 <script>
+  // Configurazione ufficiale con le tue credenziali reali
   const SUPABASE_URL = "https://supabase.co";
   const SUPABASE_ANON_KEY = "sb_publishable_xJbWH3ACgE644IkYjY9KvA_PEVdtPL2";
   const supabase = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 </script>
-      const supabase = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
-    </script>
-  </head>
   <body>
     <div class="page-shell">
       <header class="topbar">
