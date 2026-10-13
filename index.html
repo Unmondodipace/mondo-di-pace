@@ -1,34 +1,22 @@
-html
 <!DOCTYPE html>
 <html lang="it">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Un mondo di pace</title>
-    <meta
-      name="description"
-      content="Landing page interattiva per condividere pensieri di pace, azioni buone e momenti di speranza."
-    />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Patrick+Hand&family=Quicksand:wght@400;500;600;700;800&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="styles.css" />
-  
-   
-      const supabase = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
-    </script>
-  </head><!--<!-- 1. INCLUSIONE LIBRERIA SUPABASE CORRETTA -->
-<script src="https://jsdelivr.net"></script>
-<script>
-  // Configurazione ufficiale con le tue credenziali reali
-  const SUPABASE_URL = "https://supabase.co";
-  const SUPABASE_ANON_KEY = "sb_publishable_xJbWH3ACgE644IkYjY9KvA_PEVdtPL2";
-  const supabase = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
-</script>
-  <body>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Un mondo di pace</title>
+  <meta name="description" content="Landing page interattiva per condividere pensieri di pace, azioni buone e momenti di speranza." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&family=Quicksand:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script>
+    const SUPABASE_URL = "https://uqhykpqxuybvtlnfikrx.supabase.co";
+    const SUPABASE_ANON_KEY = "sb_publishable_xJbWH3ACgE644IkYjY9KvA_PEVdtPL2";
+    const supabaseClient = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+  </script>
+</head>
+<body>
     <div class="page-shell">
       <header class="topbar">
         <nav class="nav" aria-label="Menu principale">
@@ -221,6 +209,9 @@ html
           </div>
           <div id="lista-messaggi" style="max-width: 600px; margin: 0 auto;">Caricamento pensieri di pace...</div>
         </section>
+</main>
+</div>
+<script>
         // --- SEZIONE MULTILINGUA ---
 const translations = {
 it: {
@@ -299,7 +290,7 @@ function changeLanguage(lang) {
 currentLang = lang;
 // Aggiorna classi attive sul selettore grafico
 document.querySelectorAll('.lang').forEach(el => el.classList.remove('active'));
-const activeLangEl = document.querySelector(.lang.${lang});
+const activeLangEl = document.querySelector(`.lang.${lang}`);
 if(activeLangEl) activeLangEl.classList.add('active');
 // Sostituisce i testi con l'attributo data-i18n
 document.querySelectorAll('[data-i18n]').forEach(el => {
@@ -349,7 +340,7 @@ msgDiv.innerHTML = currentLang === 'it' ? "Compila i campi obbligatori." : "Plea
 return;
 }
 // Invio su Supabase. Nota: i campi mappano esattamente le colonne del database
-const { data, error } = await supabase
+const { data, error } = await supabaseClient
 .from('messaggi')
 .insert([{ nome: name, paese: country, pensiero: thought }]);
 if (error) {
@@ -364,7 +355,7 @@ document.getElementById('peace-form').reset();
 // 2. Caricamento dei messaggi approvati sul sito
 async function caricaMessaggiApprovati() {
 const listaDiv = document.getElementById('lista-messaggi');
-const { data: messaggi, error } = await supabase
+const { data: messaggi, error } = await supabaseClient
 .from('messaggi')
 .select('*')
 .eq('approvato', true)
@@ -375,7 +366,7 @@ return;
 }
 listaDiv.innerHTML = '';
 if(!messaggi || messaggi.length === 0) {
-listaDiv.innerHTML = <p style="text-align:center; color:#777;">${translations[currentLang]["no-msg"]}</p>;
+listaDiv.textContent = translations[currentLang]["no-msg"];
 return;
 }
 messaggi.forEach(function(msg) {
@@ -386,11 +377,23 @@ item.style.padding = "15px";
 item.style.marginBottom = "15px";
 item.style.borderRadius = "8px";
 item.style.boxShadow = "0 2px 4px rgba(0,0,0,0.05)";
-item.innerHTML = <span style="font-size:0.9rem; color:#666; font-weight:bold;">🕊️ ${msg.nome} da ${msg.paese}</span> <p style="margin: 8px 0 0 0; font-style: italic; font-size:1.1rem; color:#333;">"${msg.pensiero}"</p>;
+const author = document.createElement('span');
+author.style.fontSize = '0.9rem';
+author.style.color = '#666';
+author.style.fontWeight = 'bold';
+author.textContent = `🕊️ ${msg.nome || 'Anonimo'} da ${msg.paese || ''}`;
+const thought = document.createElement('p');
+thought.style.margin = '8px 0 0 0';
+thought.style.fontStyle = 'italic';
+thought.style.fontSize = '1.1rem';
+thought.style.color = '#333';
+thought.textContent = `“${msg.pensiero || ''}”`;
+item.append(author, thought);
 listaDiv.appendChild(item);
 });
 }
 // Avvia la lettura iniziale dei messaggi approvati
 caricaMessaggiApprovati();
-
-
+</script>
+</body>
+</html>
