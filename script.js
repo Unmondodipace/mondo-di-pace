@@ -55,10 +55,10 @@ async function loadMessages() {
   messagesList.innerHTML =
     '<div class="empty-state">Caricamento dei pensieri…</div>';
 
-  const { data, error } = await supabaseClient
-    .from('peace_messages')
-    .select('id, thought, name, country, created_at')
-    .order('created_at', { ascending: false });
+const { data, error } = await supabaseClient
+  .from('messaggi')
+  .select('id, thought, name, country, created_at')
+  .order('created_at', { ascending: false });
 
   if (error) {
     console.error('Errore nel caricamento:', error);
@@ -94,13 +94,13 @@ if (form) {
     const submitButton = form.querySelector('[type="submit"]');
     if (submitButton) submitButton.disabled = true;
 
-    const { error } = await supabaseClient
-      .from('peace_messages')
-      .insert([{
-        thought,
-        name: name || 'Anonimo',
-        country: country || 'Paese non specificato'
-      }]);
+ const { error } = await supabaseClient
+  .from('messaggi')
+  .insert([{
+    thought,
+    name: name || 'Anonimo',
+    country: country || 'Paese non specificato'
+  }]);
 
     if (submitButton) submitButton.disabled = false;
 
